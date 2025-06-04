@@ -40,7 +40,7 @@ For **managers** that need to **monitor work hours**, this is a **bookkeeping pr
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/[your-username]/labor-tracking-system.git
+   git clone https://github.com/[your-username]/TimeLink.git
    cd labor-tracking-system
    ```
 
