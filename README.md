@@ -1,455 +1,257 @@
-# Labor Tracking System - GitHub Setup Files
+# TimeLink - Employee Time and Task Management System
 
-## README.md
+A modern web-based time tracking and labor management system designed to streamline workforce management for businesses. Built with React and Flask, TimeLink provides an intuitive interface for both employees and managers to track work hours, monitor task progress, and analyze labor costs.
 
-```markdown
-# Labor Tracking System
+## 🚀 Current Status
 
-A modern web application for managers to track employee labor hours and costs for past and ongoing jobs.
+The application is currently in active development with core authentication and routing infrastructure complete. The system is ready for feature implementation.
 
-## Team: The Incredibles
+### ✅ Completed Features
+- **Authentication System**: JWT-based authentication with role-based access control
+- **User Roles**: Support for Employee, Manager, and Admin roles
+- **Database Schema**: Complete SQLite database with all necessary tables
+- **API Structure**: RESTful API endpoints with Flask blueprints
+- **Frontend Routing**: Protected routes based on user roles
+- **Sample Data**: Pre-populated with test users and jobs
 
-### Team Members
-- **Frontend Development**: Ilan Danial, Aidan Boudreau
-- **Backend Development**: Elan Wygodski, Matt
+### 🔄 In Progress
+- Employee clock in/out functionality
+- Task logging and time entry
+- Manager dashboards and reporting
+- Admin user management
 
-## Project Vision
+## 👥 Team: The Incredibles
 
-For **managers** that need to **monitor work hours**, this is a **bookkeeping product** that **records total labor hours and labor costs of each past and ongoing job**. Unlike the **DBA Manufacturing Next Generation system**, our product **provides a modern and simple user interface for employees and managers to interact with**. The system gives abilities to output reports with daily, weekly, and monthly viewpoints on labor hours, labor costs, and labor payments.
+- **Product Owner**: Aidan Boudreau
+- **Scrum Master**: Elan Wygodski
+- **Development Team**: Ilan Danial, Matt Beutel
 
-## Tech Stack
+## 📋 Project Vision
+
+FOR managers that need to monitor work hours and labour costs in an effective manner. THE TimeLink system is an online bookkeeping product that records labor hours and connected labor costs of each past and ongoing job. Unlike the DBA Manufacturing Next Generation system, TimeLink provides a modern and simple user interface for employees and managers to interact with. OUR product gives managers the ability to easily generate reports on labour hours, labor costs, and payments with daily, weekly and monthly views via an easily readable dashboard.
+
+## 🛠️ Tech Stack
 
 ### Frontend
-- **Languages**: HTML, CSS, JavaScript, TypeScript
-- **Framework**: React with Electron
-- **Bundler**: Webpack
-- **CSS Preprocessor**: SASS
-- **CSS Framework**: Bootstrap
+- **Framework**: React 18.2.0 with TypeScript
+- **Routing**: React Router DOM 6.20.0
+- **Styling**: Bootstrap 5.3.2 + SASS
+- **HTTP Client**: Axios
+- **Build Tool**: Webpack 5
+- **Desktop App**: Electron (optional)
 
 ### Backend
-- **Language**: Python
-- **Framework**: Flask
-- **Package Manager**: pip
+- **Framework**: Flask 3.0.0 (Python)
+- **Database**: SQLite with SQLAlchemy ORM
+- **Authentication**: Flask-JWT-Extended
+- **CORS**: Flask-CORS
+- **Password Security**: Werkzeug
 
-### Infrastructure
-- **Hosting**: UF Server
-- **Database**: SQLite
+### Development Tools
 - **Version Control**: Git + GitHub
+- **Package Management**: npm (frontend), pip (backend)
+- **Environment Management**: python-dotenv
 
-## Quick Start
+## 🚦 Quick Start
 
-1. Clone the repository
+### Prerequisites
+- Node.js (v14.0.0 or higher)
+- Python (3.8 or higher)
+- Git
+
+### Installation
+
+1. **Clone the repository**
    ```bash
-   git clone https://github.com/[your-username]/TimeLink.git
+   git clone https://github.com/[your-username]/labor-tracking-system.git
    cd labor-tracking-system
    ```
 
-2. Set up the backend
+2. **Set up the backend**
    ```bash
    cd backend
-   pip install -r requirements.txt
-   python run.py
-   ```
-
-3. Set up the frontend
-   ```bash
-   cd frontend
-   npm install
-   npm start
-   ```
-
-For detailed setup instructions, see [SETUP.md](docs/SETUP.md).
-
-## Features
-
-- Employee time tracking
-- Job cost calculation
-- Labor hour reporting (daily/weekly/monthly)
-- Modern, user-friendly interface
-- Manager dashboard
-- Employee portal
-- Export capabilities for reports
-
-## Contributing
-
-Please read our contributing guidelines before submitting pull requests.
-
-
-## .gitignore (Root)
-
-```
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Environment variables
-.env
-.env.local
-.env.*.local
-
-# Logs
-*.log
-logs/
-
-# Database
-*.db
-*.sqlite
-*.sqlite3
-database/*.db
-
-# Compiled files
-*.pyc
-__pycache__/
-*.pyo
-*.pyd
-.Python
-
-# Distribution / packaging
-build/
-dist/
-*.egg-info/
-```
-
-## frontend/.gitignore
-
-```
-# Dependencies
-node_modules/
-/.pnp
-.pnp.js
-
-# Testing
-coverage/
-
-# Production
-build/
-dist/
-out/
-
-# Misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# TypeScript
-*.tsbuildinfo
-
-# Electron
-electron-builder.yml
-```
-
-## backend/.gitignore
-
-```
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
-venv/
-ENV/
-.venv
-
-# Flask
-instance/
-.webassets-cache
-
-# Database
-*.db
-*.sqlite
-*.sqlite3
-
-# PyCharm
-.idea/
-
-# VS Code
-.vscode/
-
-# Environment variables
-.env
-.flaskenv
-```
-
-## frontend/package.json
-
-```json
-{
-  "name": "labor-tracking-frontend",
-  "version": "1.0.0",
-  "description": "Frontend for Labor Tracking System",
-  "main": "electron/main.js",
-  "scripts": {
-    "start": "webpack serve --mode development",
-    "build": "webpack --mode production",
-    "electron": "electron .",
-    "electron-build": "npm run build && electron-builder",
-    "test": "jest",
-    "lint": "eslint src/**/*.{ts,tsx}"
-  },
-  "keywords": ["labor", "tracking", "management"],
-  "author": "The Incredibles",
-  "license": "MIT",
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.8.0",
-    "bootstrap": "^5.3.0",
-    "axios": "^1.3.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "typescript": "^4.9.0",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.0",
-    "webpack-dev-server": "^4.11.0",
-    "ts-loader": "^9.4.0",
-    "css-loader": "^6.7.0",
-    "sass-loader": "^13.2.0",
-    "sass": "^1.57.0",
-    "style-loader": "^3.3.0",
-    "html-webpack-plugin": "^5.5.0",
-    "electron": "^22.0.0",
-    "electron-builder": "^23.6.0",
-    "@typescript-eslint/eslint-plugin": "^5.48.0",
-    "@typescript-eslint/parser": "^5.48.0",
-    "eslint": "^8.31.0",
-    "jest": "^29.3.0"
-  }
-}
-```
-
-## backend/requirements.txt
-
-```
-Flask==2.3.2
-Flask-SQLAlchemy==3.0.5
-Flask-CORS==4.0.0
-Flask-JWT-Extended==4.5.2
-python-dotenv==1.0.0
-SQLAlchemy==2.0.19
-Werkzeug==2.3.6
-pytest==7.4.0
-pytest-flask==1.2.0
-```
-
-## .github/workflows/ci.yml
-
-```yaml
-name: CI
-
-on:
-  push:
-    branches: [ main, develop ]
-  pull_request:
-    branches: [ main, develop ]
-
-jobs:
-  backend-tests:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v3
-    
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.9'
-    
-    - name: Install dependencies
-      run: |
-        cd backend
-        pip install -r requirements.txt
-    
-    - name: Run tests
-      run: |
-        cd backend
-        pytest
-
-  frontend-tests:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v3
-    
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-    
-    - name: Install dependencies
-      run: |
-        cd frontend
-        npm ci
-    
-    - name: Run linter
-      run: |
-        cd frontend
-        npm run lint
-    
-    - name: Run tests
-      run: |
-        cd frontend
-        npm test -- --passWithNoTests
-```
-
-## docs/SETUP.md
-
-```markdown
-# Setup Guide
-
-## Prerequisites
-
-- Python 3.8+
-- Node.js 16+
-- Git
-
-## Backend Setup
-
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
-
-2. Create a virtual environment:
-   ```bash
    python -m venv venv
-   ```
-
-3. Activate the virtual environment:
-   - Windows: `venv\Scripts\activate`
-   - Mac/Linux: `source venv/bin/activate`
-
-4. Install dependencies:
-   ```bash
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
    pip install -r requirements.txt
+   python init_db.py  # Initialize database with sample data
    ```
 
-5. Create a `.env` file with the following:
-   ```
+3. **Configure backend environment**
+   Create a `.env` file in the backend directory:
+   ```env
    FLASK_APP=run.py
    FLASK_ENV=development
-   SECRET_KEY=your-secret-key-here
-   DATABASE_URL=sqlite:///labor_tracking.db
+   SECRET_KEY=dev-secret-key-123
+   JWT_SECRET_KEY=dev-jwt-secret-456
+   PORT=5001
    ```
 
-6. Initialize the database:
+4. **Set up the frontend**
    ```bash
-   flask db init
-   flask db migrate
-   flask db upgrade
-   ```
-
-7. Run the backend:
-   ```bash
-   python run.py
-   ```
-
-## Frontend Setup
-
-1. Navigate to the frontend directory:
-   ```bash
-   cd frontend
-   ```
-
-2. Install dependencies:
-   ```bash
+   cd ../frontend
    npm install
    ```
 
-3. Create a `.env` file:
-   ```
-   REACT_APP_API_URL=http://localhost:5000
+5. **Configure frontend environment**
+   Create a `.env` file in the frontend directory:
+   ```env
+   REACT_APP_API_URL=http://localhost:5001/api
    ```
 
-4. Start the development server:
+### Running the Application
+
+1. **Start the backend server** (in backend directory with venv activated):
+   ```bash
+   python run.py
+   ```
+   The API will be available at `http://localhost:5001`
+
+2. **Start the frontend** (in a new terminal, in frontend directory):
    ```bash
    npm start
    ```
+   The application will open at `http://localhost:3000`
 
-## Database Schema
+## 🔐 Test Credentials
 
-The SQLite database includes the following tables:
-- `users` - Employee and manager accounts
-- `jobs` - Job information
-- `time_entries` - Labor hour records
-- `reports` - Generated reports
+| Role     | Employee ID | Password      |
+|----------|-------------|---------------|
+| Admin    | ADMIN001    | admin123      |
+| Manager  | MGR001      | manager123    |
+| Employee | EMP001      | employee123   |
+| Employee | EMP002      | employee123   |
+| Employee | EMP003      | employee123   |
 
-See `database/schema.sql` for the complete schema.
+## 📁 Project Structure
+
+```
+labor-tracking-system/
+├── frontend/                    # React TypeScript frontend
+│   ├── src/
+│   │   ├── components/         # Reusable React components
+│   │   ├── contexts/           # React contexts (Auth)
+│   │   ├── pages/              # Page components
+│   │   ├── styles/             # SCSS styles
+│   │   ├── App.tsx             # Main App component
+│   │   └── index.tsx           # React entry point
+│   ├── public/                 # Static files
+│   ├── package.json            # Node dependencies
+│   ├── tsconfig.json           # TypeScript config
+│   └── webpack.config.js       # Webpack config
+├── backend/                     # Flask Python backend
+│   ├── app/
+│   │   ├── __init__.py        # Flask app factory
+│   │   ├── models.py          # SQLAlchemy models
+│   │   └── routes/            # API endpoints
+│   ├── requirements.txt        # Python dependencies
+│   ├── config.py              # Flask configuration
+│   ├── run.py                 # Flask entry point
+│   └── init_db.py             # Database initialization
+├── database/                   # Database files
+│   └── schema.sql             # SQLite schema
+└── docs/                       # Documentation
 ```
 
-## Contributing Guidelines (CONTRIBUTING.md)
+## 🔧 API Endpoints
 
-```markdown
-# Contributing to Labor Tracking System
+### Authentication
+- `POST /api/auth/login` - User login
+- `GET /api/auth/me` - Get current user
+- `POST /api/auth/refresh` - Refresh access token
 
-## Workflow
+### Employee Endpoints
+- `GET /api/employee/dashboard` - Employee dashboard data
+- `POST /api/employee/clock-in` - Clock in (to be implemented)
+- `POST /api/employee/clock-out` - Clock out (to be implemented)
 
-1. Create a feature branch from `develop`
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
+### Manager Endpoints
+- `GET /api/manager/dashboard` - Manager dashboard data
+- `GET /api/manager/reports` - Generate reports (to be implemented)
 
-2. Make your changes and commit with descriptive messages
-   ```bash
-   git commit -m "feat: add employee time entry form"
-   ```
+### Admin Endpoints
+- `GET /api/admin/dashboard` - Admin dashboard data
+- `GET /api/admin/users` - User management (to be implemented)
 
-3. Push to your branch
-   ```bash
-   git push origin feature/your-feature-name
-   ```
+## 📊 Database Schema
 
-4. Create a Pull Request to `develop` branch
+The SQLite database includes the following tables:
 
-## Commit Message Convention
+- **users** - Employee, manager, and admin accounts
+- **time_entries** - Clock in/out records
+- **jobs** - Projects and job information
+- **task_entries** - Work descriptions and materials used
+- **break_entries** - Break time tracking
+- **reports** - Generated report storage
 
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **Port 5000 already in use**
+   - The backend is configured to use port 5001 to avoid conflicts with macOS AirPlay
+
+2. **CORS errors**
+   - Ensure the backend is running on port 5001
+   - Check that frontend .env has correct API URL
+
+3. **"Process is not defined" error**
+   - This has been fixed in the webpack configuration
+   - Ensure you have the latest webpack.config.js
+
+4. **SASS deprecation warnings**
+   - These are non-critical warnings about future SASS changes
+   - The app will work normally despite these warnings
+
+## 🚧 Planned Features
+
+### Phase 1: Core Functionality
+- [ ] Employee clock in/out with real-time status
+- [ ] Task entry with job selection and materials
+- [ ] Break tracking
+- [ ] Basic time calculations
+
+### Phase 2: Manager Features
+- [ ] Real-time employee status dashboard
+- [ ] Daily/weekly/monthly reports
+- [ ] Time entry approval/modification
+- [ ] Labor cost calculations
+- [ ] Export functionality (CSV/PDF)
+
+### Phase 3: Advanced Features
+- [ ] Email notifications
+- [ ] Mobile responsive design
+- [ ] Offline capability
+- [ ] Advanced analytics
+- [ ] Integration with payroll systems
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Commit Message Convention
 - `feat:` - New feature
 - `fix:` - Bug fix
 - `docs:` - Documentation changes
-- `style:` - Code style changes (formatting, etc)
+- `style:` - Code style changes
 - `refactor:` - Code refactoring
 - `test:` - Adding tests
 - `chore:` - Maintenance tasks
 
-## Code Style
+## 📝 License
 
-### Frontend (TypeScript/React)
-- Use functional components with hooks
-- Follow ESLint configuration
-- Use meaningful variable names
+This project is part of a university course project.
 
-### Backend (Python/Flask)
-- Follow PEP 8
-- Use type hints where applicable
-- Write docstrings for functions
+## 📞 Support
 
-## Testing
+For questions or issues:
+1. Check the [Issues](https://github.com/[your-username]/labor-tracking-system/issues) page
+2. Review the documentation in the `docs/` folder
+3. Contact team members through the course channels
 
-- Write unit tests for new features
-- Ensure all tests pass before submitting PR
-- Aim for >80% code coverage
+---
 
-## Pull Request Process
-
-1. Update documentation if needed
-2. Ensure CI/CD pipeline passes
-3. Request review from at least one team member
-4. Squash commits before merging
-```
+**Note**: This is an active development project. Features and documentation are being continuously updated.
