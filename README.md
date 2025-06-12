@@ -63,8 +63,8 @@ FOR managers that need to monitor work hours and labour costs in an effective ma
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/[your-username]/labor-tracking-system.git
-   cd labor-tracking-system
+   git clone https://github.com/[your-username]/TimeLink.git
+   cd TimeLink
    ```
 
 2. **Set up the backend**
@@ -102,12 +102,15 @@ FOR managers that need to monitor work hours and labour costs in an effective ma
 
 1. **Start the backend server** (in backend directory with venv activated):
    ```bash
+   cd ../backend
    python run.py
    ```
    The API will be available at `http://localhost:5001`
 
 2. **Start the frontend** (in a new terminal, in frontend directory):
    ```bash
+   cd TimeLink
+   cd frontend
    npm start
    ```
    The application will open at `http://localhost:3000`
